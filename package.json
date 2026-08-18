@@ -1,0 +1,29 @@
+{
+  "name": "git-format",
+  "version": "1.0.0",
+  "description": "Format git commit messages according to conventional commits",
+  "main": "src/index.js",
+  "bin": {
+    "git-format": "./bin/cli.js",
+    "gf": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "conventional-commits",
+    "format",
+    "cli"
+  ],
+  "author": "liangzhengtao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangzhengtao/git-format.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
