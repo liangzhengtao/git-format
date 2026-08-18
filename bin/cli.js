@@ -3,7 +3,8 @@
 'use strict';
 
 const { execSync } = require('child_process');
-const chalk = require('chalk') || { green: s => s, red: s => s, yellow: s => s, gray: s => s, bold: s => s, cyan: s => s };
+let chalk;
+try { chalk = require('chalk'); } catch { chalk = { green: s => s, red: s => s, yellow: s => s, gray: s => s, bold: s => s, cyan: s => s }; }
 
 const TYPES = {
   feat: { emoji: '✨', label: 'Feature' },
