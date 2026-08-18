@@ -1,10 +1,10 @@
-[中文版](README.zh.md)
+[English](README.md)
 
 # git-format
 
 <div align="center">
 
-**Format git commit messages according to conventional commits. No API key needed.**
+**格式化 git commit message，遵循 conventional commits 规范。无需 API key。**
 
 [![npm](https://img.shields.io/npm/v/git-format.svg)](https://www.npmjs.com/package/git-format)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -13,63 +13,63 @@
 
 ---
 
-## Quick Start
+## 快速开始
 
 ```bash
-# Stage your changes
+# 暂存更改
 git add .
 
-# Auto-format and commit
+# 自动格式化并提交
 npx git-format
 
-# Or just preview (dry run)
+# 或者只预览（dry run）
 npx git-format --dry-run
 ```
 
-## What It Does
+## 功能
 
-1. Reads your staged files
-2. Detects the commit type (feat/fix/docs/test/etc.)
-3. Detects the scope from file paths
-4. Generates a conventional commit message
-5. Commits with the formatted message
+1. 读取暂存的文件
+2. 检测提交类型（feat/fix/docs/test 等）
+3. 从文件路径检测作用域
+4. 生成规范的 commit message
+5. 使用格式化的消息提交
 
-## Examples
+## 示例
 
 ```bash
-# Stage a new feature
+# 暂存新功能
 git add src/auth/login.ts
 npx git-format
 # → feat(auth): add new feature in src/auth/login.ts
 
-# Stage a bug fix
+# 暂存 bug 修复
 git add src/api/users.ts
 git commit -m "fix bug"
 npx git-format
 # → fix(api): fix issue in src/api/users.ts
 
-# Stage documentation
+# 暂存文档
 git add README.md
 npx git-format
 # → docs: update documentation
 ```
 
-## Options
+## 选项
 
 ```
 npx git-format [options]
 
 Options:
-  -d, --dry-run    Show message without committing
-  -j, --json       Output as JSON
-  -q, --quiet      Suppress output
-  -h, --help       Display help
-  -V, --version    Display version
+  -d, --dry-run    显示消息但不提交
+  -j, --json       输出为 JSON 格式
+  -q, --quiet      静默模式
+  -h, --help       显示帮助
+  -V, --version    显示版本
 ```
 
-## Type Detection
+## 类型检测
 
-| Pattern | Type |
+| 文件模式 | 类型 |
 |---------|------|
 | `*.test.ts`, `*.spec.ts` | `test` |
 | `*.md`, `*.txt` | `docs` |
@@ -77,11 +77,11 @@ Options:
 | `package.json` | `chore` |
 | `.github/*` | `ci` |
 | `Dockerfile` | `build` |
-| Diff contains "fix", "bug" | `fix` |
-| Diff contains "add", "new" | `feat` |
-| Default | `refactor` |
+| diff 包含 "fix", "bug" | `fix` |
+| diff 包含 "add", "new" | `feat` |
+| 默认 | `refactor` |
 
-## CI Integration
+## CI 集成
 
 ```yaml
 # GitHub Actions
@@ -92,6 +92,6 @@ Options:
     git push
 ```
 
-## License
+## 许可证
 
 [MIT](LICENSE)
