@@ -2,13 +2,13 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:6e40c9&height=200&text=git-format%20%7C%20Git%20%E6%A0%BC%E5%BC%8F%E5%8C%96%20%7C%20Git%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88&fontColor=00d4ff&fontSize=35&fontAlignY=35&desc=Conventional%20Commits%2C%20Auto-Formatted&descSize=15&descAlignY=55&descAlign=50&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:6e40c9&height=200&text=git-format%20%7C%20Git%20%E6%A0%BC%E5%BC%8F%E5%8C%96%20%7C%20Git%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%20%7C%20Format%20Git%20%7C%20Formato%20Git%20%7C%20%D8%AA%D9%86%D8%B3%D9%8A%D9%82%20Git&fontColor=00d4ff&fontSize=28&fontAlignY=35&desc=Conventional%20Commits%2C%20Auto-Formatted&descSize=15&descAlignY=55&descAlign=50&animation=fadeIn" width="100%" />
 
 </div>
 
 <div align="center">
 
-# 🔖 git-format | Git 格式化 | Gitフォーマット
+# 🔖 git-format | Git 格式化 | Gitフォーマット | Format Git | Formato Git | تنسيق Git
 
 ### `npx git-format` — Conventional commits, zero effort.
 
