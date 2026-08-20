@@ -11,7 +11,7 @@
 
 <div align="center">
 
-**Format git commit messages according to conventional commits. No API key needed.**
+**Formatez vos messages de commit selon les Conventional Commits. Aucune clé API requise.**
 
 [![npm](https://img.shields.io/npm/v/git-format.svg)](https://www.npmjs.com/package/git-format)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -20,42 +20,42 @@
 
 ---
 
-## Quick Start
+## Démarrage rapide
 
 ```bash
-# Stage your changes
+# Indexez vos modifications
 git add .
 
-# Auto-format and commit
+# Formatage et commit automatiques
 npx git-format
 
-# Or just preview (dry run)
+# Aperçu uniquement (dry run)
 npx git-format --dry-run
 ```
 
-## What It Does
+## Fonctionnement
 
-1. Reads your staged files
-2. Detects the commit type (feat/fix/docs/test/etc.)
-3. Detects the scope from file paths
-4. Generates a conventional commit message
-5. Commits with the formatted message
+1. Lit les fichiers indexés
+2. Détecte le type de commit (feat/fix/docs/test, etc.)
+3. Détermine le périmètre à partir des chemins de fichiers
+4. Génère un message conforme aux Conventional Commits
+5. Effectue le commit avec le message formaté
 
-## Examples
+## Exemples
 
 ```bash
-# Stage a new feature
+# Indexer une nouvelle fonctionnalité
 git add src/auth/login.ts
 npx git-format
 # → feat(auth): add new feature in src/auth/login.ts
 
-# Stage a bug fix
+# Indexer une correction de bug
 git add src/api/users.ts
 git commit -m "fix bug"
 npx git-format
 # → fix(api): fix issue in src/api/users.ts
 
-# Stage documentation
+# Indexer de la documentation
 git add README.md
 npx git-format
 # → docs: update documentation
@@ -67,16 +67,16 @@ npx git-format
 npx git-format [options]
 
 Options:
-  -d, --dry-run    Show message without committing
-  -j, --json       Output as JSON
-  -q, --quiet      Suppress output
-  -h, --help       Display help
-  -V, --version    Display version
+  -d, --dry-run    Afficher le message sans effectuer de commit
+  -j, --json       Sortie au format JSON
+  -q, --quiet      Supprimer la sortie
+  -h, --help       Afficher l'aide
+  -V, --version    Afficher la version
 ```
 
-## Type Detection
+## Détection de type
 
-| Pattern | Type |
+| Motif | Type |
 |---------|------|
 | `*.test.ts`, `*.spec.ts` | `test` |
 | `*.md`, `*.txt` | `docs` |
@@ -84,11 +84,11 @@ Options:
 | `package.json` | `chore` |
 | `.github/*` | `ci` |
 | `Dockerfile` | `build` |
-| Diff contains "fix", "bug" | `fix` |
-| Diff contains "add", "new" | `feat` |
-| Default | `refactor` |
+| Le diff contient "fix", "bug" | `fix` |
+| Le diff contient "add", "new" | `feat` |
+| Par défaut | `refactor` |
 
-## CI Integration
+## Intégration CI
 
 ```yaml
 # GitHub Actions
@@ -99,6 +99,6 @@ Options:
     git push
 ```
 
-## License
+## Licence
 
 [MIT](LICENSE)

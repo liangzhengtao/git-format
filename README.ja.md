@@ -11,7 +11,7 @@
 
 <div align="center">
 
-**Format git commit messages according to conventional commits. No API key needed.**
+**Conventional Commits 準拠の git コミットメッセージを自動生成。API キーは不要です。**
 
 [![npm](https://img.shields.io/npm/v/git-format.svg)](https://www.npmjs.com/package/git-format)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -20,63 +20,63 @@
 
 ---
 
-## Quick Start
+## クイックスタート
 
 ```bash
-# Stage your changes
+# 変更をステージング
 git add .
 
-# Auto-format and commit
+# 自動フォーマット＆コミット
 npx git-format
 
-# Or just preview (dry run)
+# プレビューのみ（dry run）
 npx git-format --dry-run
 ```
 
-## What It Does
+## 仕組み
 
-1. Reads your staged files
-2. Detects the commit type (feat/fix/docs/test/etc.)
-3. Detects the scope from file paths
-4. Generates a conventional commit message
-5. Commits with the formatted message
+1. ステージングされたファイルを読み取る
+2. コミットタイプを検出（feat/fix/docs/test など）
+3. ファイルパスからスコープを判定
+4. Conventional Commits 形式のメッセージを生成
+5. フォーマット済みメッセージでコミット
 
-## Examples
+## 使用例
 
 ```bash
-# Stage a new feature
+# 新機能をステージング
 git add src/auth/login.ts
 npx git-format
 # → feat(auth): add new feature in src/auth/login.ts
 
-# Stage a bug fix
+# バグ修正をステージング
 git add src/api/users.ts
 git commit -m "fix bug"
 npx git-format
 # → fix(api): fix issue in src/api/users.ts
 
-# Stage documentation
+# ドキュメントをステージング
 git add README.md
 npx git-format
 # → docs: update documentation
 ```
 
-## Options
+## オプション
 
 ```
 npx git-format [options]
 
 Options:
-  -d, --dry-run    Show message without committing
-  -j, --json       Output as JSON
-  -q, --quiet      Suppress output
-  -h, --help       Display help
-  -V, --version    Display version
+  -d, --dry-run    コミットせずにメッセージを表示
+  -j, --json       JSON 形式で出力
+  -q, --quiet      出力を抑制
+  -h, --help       ヘルプを表示
+  -V, --version    バージョンを表示
 ```
 
-## Type Detection
+## タイプ検出ルール
 
-| Pattern | Type |
+| パターン | タイプ |
 |---------|------|
 | `*.test.ts`, `*.spec.ts` | `test` |
 | `*.md`, `*.txt` | `docs` |
@@ -84,11 +84,11 @@ Options:
 | `package.json` | `chore` |
 | `.github/*` | `ci` |
 | `Dockerfile` | `build` |
-| Diff contains "fix", "bug" | `fix` |
-| Diff contains "add", "new" | `feat` |
-| Default | `refactor` |
+| diff に "fix", "bug" を含む | `fix` |
+| diff に "add", "new" を含む | `feat` |
+| デフォルト | `refactor` |
 
-## CI Integration
+## CI 統合
 
 ```yaml
 # GitHub Actions
@@ -99,6 +99,6 @@ Options:
     git push
 ```
 
-## License
+## ライセンス
 
 [MIT](LICENSE)
