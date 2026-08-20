@@ -11,7 +11,7 @@
 
 <div align="center">
 
-**Conventional Commits 準拠の git コミットメッセージを自動生成。API キーは不要です。**
+**نسّق رسائل commit في git وفقاً لاتفاقية الرسائل التقليدية. لا حاجة لمفتاح API.**
 
 [![npm](https://img.shields.io/npm/v/git-format.svg)](https://www.npmjs.com/package/git-format)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -20,63 +20,63 @@
 
 ---
 
-## クイックスタート
+## البدء السريع
 
 ```bash
-# 変更をステージング
+# Stage your changes
 git add .
 
-# 自動フォーマット＆コミット
+# Auto-format and commit
 npx git-format
 
-# プレビューのみ（dry run）
+# Or just preview (dry run)
 npx git-format --dry-run
 ```
 
-## 仕組み
+## ماذا يفعل
 
-1. ステージングされたファイルを読み取る
-2. コミットタイプを検出（feat/fix/docs/test など）
-3. ファイルパスからスコープを判定
-4. Conventional Commits 形式のメッセージを生成
-5. フォーマット済みメッセージでコミット
+1. يقرأ الملفات المُضاف إليها التغييرات
+2. يكشف نوع commit (feat/fix/docs/test/etc.)
+3. يكشف النطاق من مسارات الملفات
+4. يُنشئ رسالة commit تقليدية
+5. يُجري commit بالرسالة المُنسّقة
 
-## 使用例
+## أمثلة
 
 ```bash
-# 新機能をステージング
+# Stage a new feature
 git add src/auth/login.ts
 npx git-format
 # → feat(auth): add new feature in src/auth/login.ts
 
-# バグ修正をステージング
+# Stage a bug fix
 git add src/api/users.ts
 git commit -m "fix bug"
 npx git-format
 # → fix(api): fix issue in src/api/users.ts
 
-# ドキュメントをステージング
+# Stage documentation
 git add README.md
 npx git-format
 # → docs: update documentation
 ```
 
-## オプション
+## الخيارات
 
 ```
 npx git-format [options]
 
 Options:
-  -d, --dry-run    コミットせずにメッセージを表示
-  -j, --json       JSON 形式で出力
-  -q, --quiet      出力を抑制
-  -h, --help       ヘルプを表示
-  -V, --version    バージョンを表示
+  -d, --dry-run    Show message without committing
+  -j, --json       Output as JSON
+  -q, --quiet      Suppress output
+  -h, --help       Display help
+  -V, --version    Display version
 ```
 
-## タイプ検出ルール
+## كشف الأنواع
 
-| パターン | タイプ |
+| النمط | النوع |
 |---------|------|
 | `*.test.ts`, `*.spec.ts` | `test` |
 | `*.md`, `*.txt` | `docs` |
@@ -84,11 +84,11 @@ Options:
 | `package.json` | `chore` |
 | `.github/*` | `ci` |
 | `Dockerfile` | `build` |
-| diff に "fix", "bug" を含む | `fix` |
-| diff に "add", "new" を含む | `feat` |
-| デフォルト | `refactor` |
+| Diff contains "fix", "bug" | `fix` |
+| Diff contains "add", "new" | `feat` |
+| Default | `refactor` |
 
-## CI 統合
+## التكامل مع CI
 
 ```yaml
 # GitHub Actions
@@ -99,6 +99,6 @@ Options:
     git push
 ```
 
-## ライセンス
+## الترخيص
 
 [MIT](LICENSE)
